@@ -3,14 +3,14 @@ import { Image, StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 import { Footer } from '@/components/Footer';
 
-export default function HomeScreen() {
+export default function AboutScreen() {
   return (
     <View style={styles.container}>
       <Image
         source={require('@/assets/images/culture.jpg')}
         style={styles.image}
       />
-      <Text style={styles.title}>Home</Text>
+      <Text style={styles.title}>About</Text>
       <View
         style={styles.separator}
         lightColor="#eee"

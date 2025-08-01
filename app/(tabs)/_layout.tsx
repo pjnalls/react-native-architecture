@@ -5,7 +5,6 @@ import { Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -21,16 +20,22 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tabIconSelected,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: false,
+        tabBarPosition: 'top',
+        tabBarStyle: {
+          height: 140,
+          backgroundColor: Colors[colorScheme ?? 'light'].tabBarBackground,
+        },
+        tabBarInactiveTintColor: Colors[colorScheme ?? 'light'].tabIconDefault,
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Home',
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -48,12 +53,26 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
-        options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
+          name="about"
+          options={{
+            title: 'About',
+            tabBarIcon: ({ color }) => <TabBarIcon name="info-circle" color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="services"
+          options={{
+            title: 'Services',
+            tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
+          }}
+        />
+        <Tabs.Screen
+          name="contact"
+          options={{
+            title: 'Contact',
+            tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          }}
+        />
     </Tabs>
   );
 }
