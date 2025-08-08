@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     position: 'absolute',
     paddingHorizontal: 24,
-    bottom: 0
+    bottom: 0,
+    zIndex: 3,
 
   },
   returnHome: {
