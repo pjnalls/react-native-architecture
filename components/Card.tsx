@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { StyleSheet, ViewStyle } from 'react-native';
 
-import { InfoDetails } from '@/types/Props';
+import { InfoDetails } from '@/types/Card';
 import { Text, View } from './Themed';
 
 type CardProps = InfoDetails & {

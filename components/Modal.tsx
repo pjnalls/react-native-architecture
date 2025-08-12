@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-import { InfoDetails } from '@/types/Props';
+import { InfoDetails } from '@/types/Card';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Colors from '@/constants/Colors';
 
@@ -19,7 +19,7 @@ export default function Modal({ title, children, setShowMore }: ModalProps) {
   };
 
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handleOnPress}>
       <View style={styles.overlay}></View>
       <Card
         title={title}
@@ -46,22 +46,20 @@ export default function Modal({ title, children, setShowMore }: ModalProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
+    position: 'relative',
     zIndex: 1,
   },
   overlay: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: '#000',
     opacity: 0.6,
-    width: '100%',
-    height: '100%',
     position: 'absolute',
     zIndex: 2,
   },
   card: {
+    flexGrow: 1,
     marginVertical: 'auto',
+    height: '100%',
     zIndex: 5
   },
   closeButtonText: {
