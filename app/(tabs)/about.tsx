@@ -2,28 +2,25 @@ import { Image, StyleSheet } from 'react-native';
 
 import { Text, View } from '@/components/Themed';
 import { Footer } from '@/components/Footer';
+import { i18n } from '@/i18n/locales';
+import { useAppSelector } from '@/redux/hooks';
 
 export default function AboutScreen() {
+  const locale = useAppSelector((state) => state.localizer.locale);
   return (
     <View style={styles.container}>
       <Image
         source={require('@/assets/images/culture.jpg')}
         style={styles.image}
       />
-      <Text style={styles.title}>About</Text>
+      <Text style={styles.title}>{i18n[locale].tabLabels.about}</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
       <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {i18n[locale].placeholderText}
       </Text>
       <Footer />
     </View>

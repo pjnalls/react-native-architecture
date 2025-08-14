@@ -5,6 +5,8 @@ import { Pressable } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { useColorScheme } from '@/components/useColorScheme';
+import { i18n } from '@/i18n/locales';
+import { useAppSelector } from '@/redux/hooks';
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -16,6 +18,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const locale = useAppSelector((state) => state.localizer.locale);
 
   return (
     <Tabs
@@ -34,7 +37,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: i18n[locale].tabLabels.home,
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
@@ -55,28 +58,28 @@ export default function TabLayout() {
       <Tabs.Screen
           name="about"
           options={{
-            title: 'About',
+            title: i18n[locale].tabLabels.about,
             tabBarIcon: ({ color }) => <TabBarIcon name="info-circle" color={color} />,
           }}
         />
         <Tabs.Screen
           name="services"
           options={{
-            title: 'Services',
+            title: i18n[locale].tabLabels.services,
             tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
           }}
         />
         <Tabs.Screen
           name="contact"
           options={{
-            title: 'Contact',
+            title: i18n[locale].tabLabels.contact,
             tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
           }}
         />
         <Tabs.Screen
           name="dashboard"
           options={{
-            title: 'Dashboard',
+            title: i18n[locale].tabLabels.dashboard,
             tabBarIcon: ({ color }) => <TabBarIcon name="area-chart" color={color} />,
           }}
         />

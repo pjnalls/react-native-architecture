@@ -57,10 +57,8 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   card: {
-    flexGrow: 1,
-    marginVertical: 'auto',
-    height: '100%',
-    zIndex: 5
+    zIndex: 5,
+    marginBottom: 48
   },
   closeButtonText: {
     textAlign: 'center',

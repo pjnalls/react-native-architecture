@@ -1,0 +1,64 @@
+{
+  "en-US": {
+    "language": {
+      "label": "Language Setting",
+      "value": "English"
+    },
+    "tabLabels": {
+      "about": "About",
+      "contact": "Contact",
+      "dashboard": "Dashboard",
+      "home": "Home",
+      "services": "Services"
+    },
+    "footer": {
+      "statement": "This app is under \nthe MIT License."
+    },
+    "placeholderText": "But I must explain to you how all this mistaken idea of denouncing of a pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  "es-419": {
+    "language": {
+      "label": "Configuración de idioma",
+      "value": "Español"
+    },
+    "tabLabels": {
+      "about": "Acerca",
+      "contact": "Contacto",
+      "dashboard": "Tablero Panel",
+      "home": "Inicio",
+      "services": "Servicios"
+    },
+    "footer": {
+      "statement": "Esta app es esta bajo \nlicencia MTI."
+    },
+    "placeholderText": "Pero debo explicarles cómo nació toda esta idea equivocada de denunciar el placer y alabar el dolor, y les daré un relato completo del sistema y les expondré las enseñanzas reales del gran explorador de la verdad, el maestro constructor de la felicidad humana.",
+    "months": [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ]
+  }
+}
