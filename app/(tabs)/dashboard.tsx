@@ -10,6 +10,7 @@ import Modal from '@/components/Modal';
 import { InfoDetails } from '@/types/Card';
 import { i18n } from '@/i18n/locales';
 import { useAppSelector } from '@/redux/hooks';
+import Chart from '@/components/Chart';
 
 export default function DashboardScreen() {
   const locale = useAppSelector((state) => state.localizer.locale);
@@ -46,6 +47,7 @@ export default function DashboardScreen() {
           lightColor="#eee"
           darkColor="rgba(255,255,255,0.1)"
         />
+        <Chart />
         {!showMore &&
           i18n[locale].months.map((month, index) => {
             const description =
@@ -77,9 +79,7 @@ export default function DashboardScreen() {
             title={selectedCard?.title ?? 'January'}
             setShowMore={setShowMore}
           >
-            <Text style={styles.description}>
-              {selectedCard?.description}
-            </Text>
+            <Text style={styles.description}>{selectedCard?.description}</Text>
           </Modal>
         )}
       </ScrollView>
